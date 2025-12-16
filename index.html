@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Darts Score Keeper</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Darts Score Keeper</h1>
+  </header>
+
+  <main>
+    <section class="grid">
+      <div class="card">
+        <h3>Setup</h3>
+        <label>Player 1</label>
+        <input id="p1" placeholder="Player 1 name" />
+        <label>Player 2</label>
+        <input id="p2" placeholder="Player 2 name" />
+        <div class="row">
+          <div>
+            <label>Game</label>
+            <select id="gameType">
+              <option value="301">301 up</option>
+              <option value="501">501 up</option>
+            </select>
+          </div>
+          <div>
+            <label>Best of (legs)</label>
+            <select id="bestOf">
+              <option value="3">3</option>
+              <option value="5">5</option>
+              <option value="7">7</option>
+            </select>
+          </div>
+        </div>
+        <button class="primary" id="start">Start Set</button>
+      </div>
+
+      <div class="card">
+        <h3>Current Leg</h3>
+        <div id="legInfo" class="muted">Not started</div>
+        <div class="row">
+          <div>
+            <label>Active player</label>
+            <select id="active"></select>
+          </div>
+          <div>
+            <label>Score thrown</label>
+            <input id="throw" type="number" min="0" max="180" placeholder="0–180" />
+          </div>
+        </div>
+        <button id="addTurn">Add Turn</button>
+        <button class="ghost" id="endLeg">End Leg</button>
+      </div>
+
+      <div class="card">
+        <h3>Scores</h3>
+        <div id="scores"></div>
+      </div>
+
+      <div class="card">
+        <h3>Turns (this leg)</h3>
+        <table>
+          <thead>
+            <tr><th>Player</th><th>Thrown</th><th>Remaining</th><th></th></tr>
+          </thead>
+          <tbody id="turns"></tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h3>Set Result</h3>
+        <div id="setResult" class="muted">—</div>
+        <button class="danger" id="reset">Reset All</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>No data stored</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
